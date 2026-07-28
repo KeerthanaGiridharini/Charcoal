@@ -117,8 +117,8 @@ const GALLERY_RIGHT = [
 
 const NAV = [
   { id: "about", label: "About" },
-  { href: "https://charcoal-tandoor-fire-grill.happychimps.com/digital-menu?branch=199&menu=digital_menu&sub_menu=digital_menu", label: "Menu" },
-  { href: "https://charcoal-tandoor-fire-grill.happychimps.com/deals?branch=199&menu=meal_deal&sub_menu=meal_deal", label: "Deals & Offers" },
+  { href: "https://charcoal-colombo.happychimps.com/digital-menu?branch=199&menu=digital_menu&sub_menu=digital_menu", label: "Menu" },
+  { href: "https://charcoal-colombo.happychimps.com/deals?branch=199&menu=meal_deal&sub_menu=meal_deal", label: "Deals & Offers" },
   { id: "gallery", label: "Gallery" },
   { id: "private-dining", label: "Private Dining" },
   { id: "contact", label: "Contact" },
@@ -275,7 +275,7 @@ function Nav() {
             ))}
             <a
               className="btn-ember btn-sm"
-              href="https://charcoal-tandoor-fire-grill.happychimps.com/reservation?branch=199&menu=book_a_table&sub_menu=book_a_table"
+              href="https://charcoal-colombo.happychimps.com/reservation?branch=199&menu=book_a_table&sub_menu=book_a_table"
               target="_blank"
               rel="noreferrer"
             >
@@ -303,7 +303,7 @@ function Nav() {
         ))}
         <a
           className="btn-ember btn-sm"
-          href="https://charcoal-tandoor-fire-grill.happychimps.com/reservation?branch=199&menu=book_a_table&sub_menu=book_a_table"
+          href="https://charcoal-colombo.happychimps.com/reservation?branch=199&menu=book_a_table&sub_menu=book_a_table"
           target="_blank"
           rel="noreferrer"
         >
@@ -365,13 +365,13 @@ function Hero() {
         <div className="hero-actions">
           <a
             className="btn-ember"
-            href="https://charcoal-tandoor-fire-grill.happychimps.com/reservation?branch=199&menu=book_a_table&sub_menu=book_a_table"
+            href="https://charcoal-colombo.happychimps.com/reservation?branch=199&menu=book_a_table&sub_menu=book_a_table"
             target="_blank"
             rel="noreferrer"
           >
             Reserve a Table
           </a>
-          <a className="btn-ghost" href="https://charcoal-tandoor-fire-grill.happychimps.com/digital-menu?branch=199&menu=digital_menu&sub_menu=digital_menu">
+          <a className="btn-ghost" href="https://charcoal-colombo.happychimps.com/digital-menu?branch=199&menu=digital_menu&sub_menu=digital_menu">
             View menu
           </a>
         </div>
@@ -647,7 +647,7 @@ const Menu = () => {
     >
       <a
         className="btn-ember"
-        href="https://charcoal-tandoor-fire-grill.happychimps.com/menu?branch=199&menu=mobile_table_order&sub_menu=digital_menu"
+        href="https://charcoal-colombo.happychimps.com/menu?branch=199&menu=mobile_table_order&sub_menu=digital_menu"
         target="_blank"
         rel="noreferrer"
       >
@@ -656,7 +656,7 @@ const Menu = () => {
 
       <a
         className="btn-ghost flex items-center gap-2"
-        href="https://charcoal-tandoor-fire-grill.happychimps.com/deals?branch=199&menu=meal_deal&sub_menu=meal_deal"
+        href="https://charcoal-colombo.happychimps.com/deals?branch=199&menu=meal_deal&sub_menu=meal_deal"
         target="_blank"
         rel="noreferrer"
       >
@@ -748,10 +748,10 @@ function PrivateDining() {
           Reserve your table and we&apos;ll take it from there.
         </p>
         <div className="pd-actions">
-          <a className="btn-ember" href="https://charcoal-tandoor-fire-grill.happychimps.com/reservation?branch=199&menu=book_a_table&sub_menu=book_a_table" target="_blank" rel="noreferrer">
+          <a className="btn-ember" href="https://charcoal-colombo.happychimps.com/reservation?branch=199&menu=book_a_table&sub_menu=book_a_table" target="_blank" rel="noreferrer">
             Book Your Table
           </a>
-          <a className="btn-ghost" href="https://charcoal-tandoor-fire-grill.happychimps.com/digital-menu?branch=199&menu=digital_menu&sub_menu=digital_menu">
+          <a className="btn-ghost" href="https://charcoal-colombo.happychimps.com/digital-menu?branch=199&menu=digital_menu&sub_menu=digital_menu">
              View menu
           </a>
         </div>
@@ -812,7 +812,7 @@ function DealsSection() {
             </p>
             <a 
               className="btn-ember"
-              href="https://charcoal-tandoor-fire-grill.happychimps.com/deals?branch=199&menu=meal_deal&sub_menu=meal_deal"
+              href="https://charcoal-colombo.happychimps.com/deals?branch=199&menu=meal_deal&sub_menu=meal_deal"
               target="_blank"
               rel="noreferrer"
             >
