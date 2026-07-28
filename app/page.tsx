@@ -539,7 +539,7 @@ const Menu = () => {
     className="absolute inset-0 bg-cover bg-center"
     style={{
       backgroundImage:
-        "url('/charcoal-2-opt.jpeg')",
+        "url('/Charcoal-2-opt.jpeg')",
     }}
   />
   <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(39,26,107,0.35),rgba(11,9,8,0.82))]" />
