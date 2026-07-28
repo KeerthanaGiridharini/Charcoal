@@ -805,7 +805,7 @@ function DealsSection() {
           <Reveal delay={200} className="text-center px-2 flex flex-col items-center justify-center w-full">
             <h3 className="text-[#C69C6D] uppercase tracking-[0.2em] text-xs md:text-sm mb-4">Special Offers</h3>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white mb-6">Exclusive Deals</h2>
-            <p className="text-[#9E9589] mb-12 text-sm h-15 md:h-25 md:text-base leading-relaxed">
+            <p className="text-[#9E9589] mb-12 text-sm h-25 md:h-25 md:text-base leading-relaxed">
               Experience the finest Charcoal signature dishes with our curated deals designed for a perfect culinary journey.
             </p>
 
