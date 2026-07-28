@@ -563,21 +563,21 @@ const Menu = () => {
           w-85
           h-125
           md:w-150
-          md:h-185
+          md:h-196
           flex
           items-center
           justify-center
-          mx-10 lg:mx-24 xl:mx-55 2xl:mx-70
+          mx-auto
           rounded-full
         "
       >
       {/* Orbit Rings */}
-      <div className="absolute w-75 h-75 md:w-115 md:h-115 rounded-full border border-dashed border-[#C69C6D]/20 animate-[spin_40s_linear_infinite]" />
+      <div className="absolute w-[300px] h-[300px] md:w-[460px] md:h-[460px] rounded-full border border-dashed border-[#C69C6D]/20 animate-[spin_40s_linear_infinite]" />
 
-      <div className="absolute w-55 h-55 md:w-90 md:h-90 rounded-full border border-[#C69C6D]/10" />
+      <div className="absolute w-[220px] h-[220px] md:w-[360px] md:h-[360px] rounded-full border border-[#C69C6D]/10" />
 
       {/* Center */}
-      <div className="absolute z-20 flex flex-col items-center justify-center w-28 h-28 md:w-36 md:h-36 rounded-full bg-[#121212] border border-[#C69C6D]/30 shadow-[0_0_50px_rgba(198,156,109,0.08)]">
+      <div className="absolute z-20 flex flex-col items-center justify-center w-28 h-28 md:w-36 md:h-36 rounded-full bg-[#121212] border border-[#C69C6D]/30 shadow-[0_0_50px_rgba(198,156,109,0.08)] text-center p-2">
         <Flame className="text-[#A66543] mb-2" size={24} />
 
         <span className="font-serif text-2xl md:text-3xl italic text-[#C69C6D]">
@@ -597,7 +597,7 @@ const Menu = () => {
         {featuredItems.map((item, idx) => (
           <div
             key={idx}
-            className="absolute flex justify-center w-47.5 md:w-60"
+            className="absolute flex justify-center w-[190px] md:w-[240px]"
             style={{
               top: item.pos.top,
               left: item.pos.left,
@@ -621,7 +621,7 @@ const Menu = () => {
               </div>
 
               {/* Card */}
-              <div className="w-45 md:w-57.5 rounded-xl bg-[#080808]/90 backdrop-blur-md border border-white/5 shadow-xl text-center px-4 py-3">
+              <div className="w-[180px] md:w-[230px] rounded-xl bg-[#080808]/90 backdrop-blur-md border border-white/5 shadow-xl text-center px-4 py-3">
                 <h4 className="font-serif text-white text-lg mb-1">
                   {item.name}
                 </h4>
@@ -1143,7 +1143,7 @@ button::-moz-focus-inner, a::-moz-focus-inner, [role="button"]::-moz-focus-inner
 .nav-inner {
   max-width: 1280px; margin: 0 auto; padding: 18px 6vw;
   display: flex; align-items: center; justify-content: center;
-  gap: 20px;
+  gap: 20px; position: relative;
 }
 .nav-brand-block {
   display: flex; flex-direction: column; align-items: center; gap: 12px;
@@ -1184,7 +1184,7 @@ button::-moz-focus-inner, a::-moz-focus-inner, [role="button"]::-moz-focus-inner
   border-radius: 0;
 }
 .nav-links button:hover::after, .nav-links a:hover::after { width: 100%; }
-.burger { display: none; background: none; border: none; color: var(--cream); }
+.burger { display: none; background: none; border: none; color: var(--cream); position: absolute; right: 6vw; top: 50%; transform: translateY(-50%); }
 .nav-mobile { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; background: rgba(11,9,8,0.97); }
 .nav-mobile-open { max-height: 400px; }
 .nav-mobile button, .nav-mobile a { display: block; width: 100%; text-align: left; padding: 14px 6vw; background: none; border: none; color: var(--cream); font-size: 15px; border-top: 1px solid var(--line); }
@@ -1360,6 +1360,11 @@ button::-moz-focus-inner, a::-moz-focus-inner, [role="button"]::-moz-focus-inner
   opacity: 0.95;
   filter: saturate(1.25) contrast(1.05) brightness(1.3);
   z-index: -1;
+}
+@media (max-width: 768px) {
+  .private-dining::before {
+    background-attachment: scroll;
+  }
 }
 .pd-content {
   max-width: 640px;
