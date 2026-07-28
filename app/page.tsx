@@ -76,7 +76,7 @@ function TiktokIcon({ size = 18, className = "" }: { size?: number; className?: 
 /* ------------------------------------------------------------------ */
 
 const HERO_SLIDES = [
-  
+
   {
     img: "https://charcoalbkk.com/wp-content/uploads/2023/09/Charcaol-May-22-2023-84-scaled.jpg",
     caption: "Smoke, spice, ceremony",
@@ -498,7 +498,7 @@ function About() {
 /* ------------------------------------------------------------------ */
 /*  SIGNATURE DISH                                                     */
 /* ------------------------------------------------------------------ */
-const Menu = () => {
+function Menu() {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -513,159 +513,157 @@ const Menu = () => {
       name: "Kakori Kebab",
       desc: "Smoked minced lamb",
       img: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?q=80&w=800&auto=format&fit=crop",
-      pos: { top: '15%', left: '50%' }
+      pos: { top: '18.5%', left: '50%' }
     },
     {
       name: "Tandoori Jhinga",
       desc: "Jumbo prawns, yellow chili",
       img: "https://images.unsplash.com/photo-1559742811-822873691df8?q=80&w=800&auto=format&fit=crop",
-      pos: { top: '75%', left: '85%' }
+      pos: { top: '65.8%', left: '77.3%' }
     },
     {
       name: "Dal Charcoal",
       desc: "Overnight slow-cooked lentils",
       img: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=800&auto=format&fit=crop",
-      pos: { top: '75%', left: '15%' }
+      pos: { top: '65.8%', left: '22.7%' }
     }
   ];
 
   return (
-<section
-  id="menu"
-  ref={containerRef}
-  className="relative overflow-hidden min-h-[135vh] flex items-center justify-center py-24"
->
-  <div
-    className="absolute inset-0 bg-cover bg-center"
-    style={{
-      backgroundImage:
-        "url('/Charcoal-2-opt.jpeg')",
-    }}
-  />
-  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(39,26,107,0.35),rgba(11,9,8,0.82))]" />
-  <div className="absolute inset-0 bg-black/25" />
-
-  <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col items-center">
-
-    {/* Heading */}
-    <div className="mb-16 md:mb-20">
-      <SectionHeading
-        subtitle="Culinary Journey"
-        title="Featured Signatures"
-      />
-    </div>
-
-    <div className="relative w-full max-w-6xl flex items-center justify-center">
-      {/* Orbit Container */}
+    <section
+      id="menu"
+      ref={containerRef}
+      className="section relative overflow-hidden min-h-[135vh] flex items-center justify-center"
+      style={{ background: 'none' }}
+    >
       <div
-        className="
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('/Charcoal-2-opt.jpeg')",
+        }}
+      />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(39,26,107,0.35),rgba(11,9,8,0.82))]" />
+      <div className="absolute inset-0 bg-black/25" />
+
+      <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col items-center">
+
+        {/* Heading */}
+        <div className="mb-16 md:mb-20 h-25">
+          <SectionHeading
+            subtitle="Culinary Journey"
+            title="Featured Signatures"
+          />
+        </div>
+
+        <div className="relative w-full max-w-6xl flex items-center justify-center">
+          {/* Orbit Container */}
+          <div
+            className="
           relative
-          w-85
-          h-125
-          md:w-150
-          md:h-196
+          w-[350px] h-[500px]
+          md:w-[560px] md:h-[620px]
           flex
           items-center
           justify-center
           mx-auto
           rounded-full
         "
-      >
-      {/* Orbit Rings */}
-      <div className="absolute w-[300px] h-[300px] md:w-[460px] md:h-[460px] rounded-full border border-dashed border-[#C69C6D]/20 animate-[spin_40s_linear_infinite]" />
-
-      <div className="absolute w-[220px] h-[220px] md:w-[360px] md:h-[360px] rounded-full border border-[#C69C6D]/10" />
-
-      {/* Center */}
-      <div className="absolute z-20 flex flex-col items-center justify-center w-28 h-28 md:w-36 md:h-36 rounded-full bg-[#121212] border border-[#C69C6D]/30 shadow-[0_0_50px_rgba(198,156,109,0.08)] text-center p-2">
-        <Flame className="text-[#A66543] mb-2" size={24} />
-
-        <span className="font-serif text-2xl md:text-3xl italic text-[#C69C6D]">
-          Taste
-        </span>
-
-        <span className="text-[10px] uppercase tracking-[0.25em] text-gray-500 mt-1">
-          The Moghul Era
-        </span>
-      </div>
-
-      {/* Rotating Orbit */}
-      <motion.div
-        style={{ rotate }}
-        className="absolute inset-0"
-      >
-        {featuredItems.map((item, idx) => (
-          <div
-            key={idx}
-            className="absolute flex justify-center w-[190px] md:w-[240px]"
-            style={{
-              top: item.pos.top,
-              left: item.pos.left,
-              transform: "translate(-50%, -50%)",
-            }}
           >
+            {/* Orbit Rings */}
+            <div className="absolute w-[85%] h-[85%] rounded-full border border-dashed border-[#C69C6D]/20 animate-[spin_40s_linear_infinite]" />
+
+            <div className="absolute w-[63%] h-[63%] rounded-full border border-[#C69C6D]/10" />
+
+            {/* Center */}
+            <div className="absolute z-20 flex flex-col items-center justify-center w-28 h-28 md:w-36 md:h-36 rounded-full bg-[#121212] border border-[#C69C6D]/30 shadow-[0_0_50px_rgba(198,156,109,0.08)] text-center p-2">
+              <Flame className="text-[#A66543] mb-2" size={24} />
+
+              <span className="font-serif text-2xl md:text-3xl italic text-[#C69C6D]">
+                Taste
+              </span>
+
+              <span className="text-[10px] uppercase tracking-[0.25em] text-gray-500 mt-1">
+                The Moghul Era
+              </span>
+            </div>
+
+            {/* Rotating Orbit */}
             <motion.div
-              style={{ rotate: counterRotate }}
-              className="flex flex-col items-center"
+              style={{ rotate }}
+              className="absolute inset-0"
             >
-              {/* Image */}
-              <div className="relative w-24 h-24 md:w-36 md:h-36 rounded-full overflow-hidden border-2 border-[#C69C6D]/40 shadow-xl mb-4">
-                <Image
-                  src={item.img}
-                  alt={item.name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover transition duration-700 hover:scale-110"
-                  unoptimized
-                />
-              </div>
+              {featuredItems.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="absolute flex justify-center w-[180px] md:w-[240px]"
+                  style={{
+                    top: item.pos.top,
+                    left: item.pos.left,
+                    transform: "translate(-50%, -50%)",
+                  }}
+                >
+                  <motion.div
+                    style={{ rotate: counterRotate }}
+                    className="flex flex-col items-center"
+                  >
+                    {/* Image */}
+                    <div className="relative w-32 h-32 md:w-44 md:h-44 rounded-full overflow-hidden border-2 border-[#C69C6D]/40 shadow-xl mb-3 md:mb-4">
+                      <Image
+                        src={item.img}
+                        alt={item.name}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-cover transition duration-700 hover:scale-110"
+                        unoptimized
+                      />
+                    </div>
 
-              {/* Card */}
-              <div className="w-[180px] md:w-[230px] rounded-xl bg-[#080808]/90 backdrop-blur-md border border-white/5 shadow-xl text-center px-4 py-3">
-                <h4 className="font-serif text-white text-lg mb-1">
-                  {item.name}
-                </h4>
+                    {/* Card */}
+                    <div className="w-[180px] md:w-[230px] rounded-xl bg-[#080808]/90 backdrop-blur-md border border-white/5 shadow-xl text-center px-4 py-3">
+                      <h4 className="font-serif text-white text-lg mb-1">
+                        {item.name}
+                      </h4>
 
-                <p className="uppercase tracking-wider text-[#C69C6D] text-xs">
-                  {item.desc}
-                </p>
-              </div>
+                      <p className="uppercase tracking-wider text-[#C69C6D] text-xs">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+              ))}
             </motion.div>
           </div>
-        ))}
-      </motion.div>
+
+        </div>
+
+        {/* Bottom Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-col sm:flex-row gap-4 mt-10 md:mt-14"
+        >
+          <a
+            className="btn-ember flex items-center gap-2"
+            href="https://charcoal-colombo.happychimps.com/menu?branch=199&menu=mobile_table_order&sub_menu=digital_menu"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Explore Menu
+          </a>
+
+          <a
+            className="btn-ghost flex items-center gap-2"
+            href="https://charcoal-colombo.happychimps.com/deals?branch=199&menu=meal_deal&sub_menu=meal_deal"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Deals &amp; Offers
+          </a>
+        </motion.div>
       </div>
-
-    </div>
-
-    {/* Bottom Buttons */}
-    <motion.div
-      initial={{ opacity: 0, y: 80 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="flex flex-col sm:flex-row gap-4 mt-10 md:mt-14"
-    >
-      <a
-        className="btn-ember"
-        href="https://charcoal-colombo.happychimps.com/menu?branch=199&menu=mobile_table_order&sub_menu=digital_menu"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Explore Menu
-      </a>
-
-      <a
-        className="btn-ghost flex items-center gap-2"
-        href="https://charcoal-colombo.happychimps.com/deals?branch=199&menu=meal_deal&sub_menu=meal_deal"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <GlassWater size={18} />
-        Deals &amp; Offers
-      </a>
-    </motion.div>
-  </div>
-</section>
+    </section>
   );
 };
 
@@ -752,7 +750,7 @@ function PrivateDining() {
             Book Your Table
           </a>
           <a className="btn-ghost" href="https://charcoal-colombo.happychimps.com/digital-menu?branch=199&menu=digital_menu&sub_menu=digital_menu">
-             View menu
+            View menu
           </a>
         </div>
       </Reveal>
@@ -797,21 +795,22 @@ function PrivateDining() {
 
 function DealsSection() {
   return (
-    <section className="relative overflow-hidden py-24 bg-[#271a6b] flex flex-col items-center justify-center">
-      <div className="max-w-6xl mx-auto px-6 w-full">
+    <section id="deals" className="section relative overflow-hidden flex flex-col items-center justify-center" style={{ background: '#271a6b' }}>
+      <div className="max-w-6xl mx-auto w-full">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-center justify-items-center">
           <Reveal delay={100} className="relative w-full max-w-[320px] mx-auto aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-white/5">
             <Image src="/gallery/a17.jpg" alt="Charcoal Deals" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition duration-700 hover:scale-105" unoptimized />
           </Reveal>
-          
+
           <Reveal delay={200} className="text-center px-2 flex flex-col items-center justify-center w-full">
             <h3 className="text-[#C69C6D] uppercase tracking-[0.2em] text-xs md:text-sm mb-4">Special Offers</h3>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white mb-6">Exclusive Deals</h2>
-            <p className="text-[#9E9589] mb-10 text-sm md:text-base leading-relaxed">
+            <p className="text-[#9E9589] mb-12 text-sm h-15 md:h-25 md:text-base leading-relaxed">
               Experience the finest Charcoal signature dishes with our curated deals designed for a perfect culinary journey.
             </p>
-            <a 
-              className="btn-ember"
+
+            <a
+              className="btn-ember gap-10"
               href="https://charcoal-colombo.happychimps.com/deals?branch=199&menu=meal_deal&sub_menu=meal_deal"
               target="_blank"
               rel="noreferrer"
@@ -988,21 +987,23 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <span>© {new Date().getFullYear()} Charcoal Colombo. All rights reserved.</span>
         <a href="https://sohohospitality.com" target="_blank" rel="noreferrer" className="footer-soho-link">
           <Image src="/footer_logos/Soho-logo.webp" alt="Soho Hospitality Logo" width={180} height={80} className="footer-soho-logo" unoptimized />
         </a>
+        <span>© {new Date().getFullYear()} Charcoal Colombo. All rights reserved.</span>
       </div>
     </footer>
   );
 }
 
-const SectionHeading = ({ title, subtitle }: { title: string; subtitle: string }) => (
-  <div className="text-center mb-12">
-    <h3 className="text-[#C69C6D] uppercase tracking-[0.2em] text-xs md:text-sm mb-4">{subtitle}</h3>
-    <h2 className="font-serif text-3xl md:text-5xl text-white">{title}</h2>
-  </div>
-);
+function SectionHeading({ title, subtitle }: { title: string; subtitle: string }) {
+  return (
+    <div className="text-center mb-12">
+      <h3 className="text-[#C69C6D] uppercase tracking-[0.2em] text-xs md:text-sm mb-4">{subtitle}</h3>
+      <h2 className="font-serif text-3xl md:text-5xl text-white">{title}</h2>
+    </div>
+  );
+}
 
 /* ------------------------------------------------------------------ */
 /*  ROOT                                                               */
@@ -1406,7 +1407,6 @@ button::-moz-focus-inner, a::-moz-focus-inner, [role="button"]::-moz-focus-inner
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding-top: 20px;
 }
 .faq-section::before {
   content: '';
@@ -1454,7 +1454,7 @@ button::-moz-focus-inner, a::-moz-focus-inner, [role="button"]::-moz-focus-inner
 .brand-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
 .brand-logo-card { position: relative; width: min(140px, 24vw); aspect-ratio: 4 / 2.2; overflow: hidden; border-radius: 999px; border: 1px solid var(--line); background: rgba(245,237,227,0.06); }
 .brand-logo-card img { object-fit: cover; }
-.footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 22px; padding-top: 16px; color: var(--smoke); font-size: 12.5px; }
+.footer-bottom { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 16px; margin-top: 22px; padding-top: 16px; color: var(--smoke); font-size: 12.5px; text-align: center; }
 .footer-soho-link { display: flex; align-items: center; transition: transform 0.3s ease; }
 .footer-soho-link:hover { transform: scale(1.04); }
 .footer-soho-logo { opacity: 0.8; transition: opacity 0.3s ease; filter: brightness(1.2); }
