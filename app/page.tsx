@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState, useMemo, useCallback } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useInView, animate } from "framer-motion";
 import {
   Phone,
   MapPin,
@@ -410,6 +410,25 @@ function Hero() {
 /*  ABOUT                                                              */
 /* ------------------------------------------------------------------ */
 
+function AnimatedStatNumber({ end, prefix = "", suffix = "" }: { end: number, prefix?: string, suffix?: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "0px" });
+  
+  useEffect(() => {
+    if (inView && ref.current) {
+      animate(0, end, {
+        duration: 2,
+        ease: "easeOut",
+        onUpdate: (latest) => {
+          if (ref.current) ref.current.textContent = prefix + Math.floor(latest) + suffix;
+        }
+      });
+    }
+  }, [inView, end, prefix, suffix]);
+  
+  return <span ref={ref}>{prefix}0{suffix}</span>;
+}
+
 function About() {
   return (
     <section id="about" className="section about">
@@ -473,19 +492,19 @@ function About() {
 
           <div className="about-stats about-stats-centered">
             <div className="stat">
-              <span className="stat-num">100%</span>
+              <span className="stat-num"><AnimatedStatNumber end={100} suffix="%" /></span>
               <span className="stat-label">Halal-Certified</span>
             </div>
             <div className="stat">
-              <span className="stat-num">12+</span>
+              <span className="stat-num"><AnimatedStatNumber end={12} suffix="+" /></span>
               <span className="stat-label">Signature Dishes</span>
             </div>
             <div className="stat">
-              <span className="stat-num">5–12</span>
+              <span className="stat-num"><AnimatedStatNumber end={5} />–<AnimatedStatNumber end={12} /></span>
               <span className="stat-label">Open Nightly, Tue–Sun</span>
             </div>
             <div className="stat">
-              <span className="stat-num">1</span>
+              <span className="stat-num"><AnimatedStatNumber end={1} /></span>
               <span className="stat-label">Live Tandoor Flame</span>
             </div>
           </div>
