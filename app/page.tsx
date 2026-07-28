@@ -90,7 +90,7 @@ const HERO_SLIDES = [
     caption: "100% halal, zero compromise",
   },
   {
-    img: '/hero1.jpg',
+    img: '/img1.jpg',
     caption: "The tandoor never sleeps",
   },
 ];
@@ -240,8 +240,8 @@ function Nav() {
 
   useEffect(() => {
     const onScroll = () => {
-      // Trigger nav-solid when scrolling past the hero and into the middle of the about section (~1.3x viewport height)
-      setScrolled(window.scrollY > window.innerHeight * 1.3);
+      // Trigger nav-solid when scrolling past the hero section
+      setScrolled(window.scrollY > window.innerHeight - 20);
     };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
@@ -371,8 +371,8 @@ function Hero() {
           >
             Reserve a Table
           </a>
-          <a className="btn-ghost" href="tel:+94777600611">
-            
+          <a className="btn-ghost" href="https://charcoal-tandoor-fire-grill.happychimps.com/digital-menu?branch=199&menu=digital_menu&sub_menu=digital_menu">
+            View menu
           </a>
         </div>
       </div>
@@ -539,7 +539,7 @@ const Menu = () => {
     className="absolute inset-0 bg-cover bg-center"
     style={{
       backgroundImage:
-        "url('/Charcoal-2-opt.jpeg')",
+        "url('/charcoal-2-opt.jpeg')",
     }}
   />
   <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(39,26,107,0.35),rgba(11,9,8,0.82))]" />
@@ -748,7 +748,7 @@ function PrivateDining() {
           Reserve your table and we&apos;ll take it from there.
         </p>
         <div className="pd-actions">
-          <a className="btn-ember" href="https://book.bistrochat.com/charcoal-sri-lanka" target="_blank" rel="noreferrer">
+          <a className="btn-ember" href="https://charcoal-tandoor-fire-grill.happychimps.com/reservation?branch=199&menu=book_a_table&sub_menu=book_a_table" target="_blank" rel="noreferrer">
             Book Your Table
           </a>
           <a className="btn-ghost" href="https://charcoal-tandoor-fire-grill.happychimps.com/digital-menu?branch=199&menu=digital_menu&sub_menu=digital_menu">
@@ -792,7 +792,44 @@ function PrivateDining() {
 */
 
 /* ------------------------------------------------------------------ */
+/*  DEALS SECTION                                                      */
+/* ------------------------------------------------------------------ */
 
+function DealsSection() {
+  return (
+    <section className="relative overflow-hidden py-24 bg-[#271a6b] flex flex-col items-center justify-center">
+      <div className="max-w-6xl mx-auto px-6 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-center justify-items-center">
+          <Reveal delay={100} className="relative w-full max-w-[320px] mx-auto aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-white/5">
+            <Image src="/gallery/a17.jpg" alt="Charcoal Deals" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition duration-700 hover:scale-105" unoptimized />
+          </Reveal>
+          
+          <Reveal delay={200} className="text-center px-2 flex flex-col items-center justify-center w-full">
+            <h3 className="text-[#C69C6D] uppercase tracking-[0.2em] text-xs md:text-sm mb-4">Special Offers</h3>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white mb-6">Exclusive Deals</h2>
+            <p className="text-[#9E9589] mb-10 text-sm md:text-base leading-relaxed">
+              Experience the finest Charcoal signature dishes with our curated deals designed for a perfect culinary journey.
+            </p>
+            <a 
+              className="btn-ember"
+              href="https://charcoal-tandoor-fire-grill.happychimps.com/deals?branch=199&menu=meal_deal&sub_menu=meal_deal"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View Deals
+            </a>
+          </Reveal>
+
+          <Reveal delay={300} className="relative w-full max-w-[320px] mx-auto aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-white/5">
+            <Image src="/gallery/a16.jpg" alt="Charcoal Experience" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition duration-700 hover:scale-105" unoptimized />
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
 /*  FAQ                                                               */
 /* ------------------------------------------------------------------ */
 
@@ -981,6 +1018,7 @@ export default function CharcoalSite() {
       <Menu />
       <Gallery />
       <PrivateDining />
+      <DealsSection />
       <FAQSection />
       <Footer />
     </div>
@@ -1098,7 +1136,8 @@ button::-moz-focus-inner, a::-moz-focus-inner, [role="button"]::-moz-focus-inner
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 50;
   transition: background 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(8px);
 }
 .nav-solid { background: linear-gradient(to bottom, rgba(39, 26, 107, 0.95) 0%, rgba(11, 9, 8, 0.98) 100%); backdrop-filter: blur(10px); box-shadow: 0 1px 0 var(--line); }
 .nav-inner {
@@ -1122,25 +1161,29 @@ button::-moz-focus-inner, a::-moz-focus-inner, [role="button"]::-moz-focus-inner
 }
 .accent-text { color: var(--ember); font-style: italic; }
 .nav-links { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-.nav-links button {
-  background: none; border: none; color: var(--cream); font-size: 13.5px; font-weight: 600;
+.nav-links button, .nav-links a {
+  background: none; border: none; color: var(--cream); font-size: 16px; font-weight: 600;
   letter-spacing: 0.02em; cursor: pointer; position: relative; padding: 4px 0;
   outline: none;
   box-shadow: none;
+  text-decoration: none;
 }
 .nav-links button:hover,
 .nav-links button:focus,
-.nav-links button:active {
+.nav-links button:active,
+.nav-links a:hover,
+.nav-links a:focus,
+.nav-links a:active {
   background: transparent;
   box-shadow: none;
   outline: none;
 }
-.nav-links button::after {
+.nav-links button::after, .nav-links a::after {
   content: ""; position: absolute; left: 0; bottom: -2px; height: 1px; width: 0%;
   background: var(--ember); transition: width 0.3s ease;
   border-radius: 0;
 }
-.nav-links button:hover::after { width: 100%; }
+.nav-links button:hover::after, .nav-links a:hover::after { width: 100%; }
 .burger { display: none; background: none; border: none; color: var(--cream); }
 .nav-mobile { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; background: rgba(11,9,8,0.97); }
 .nav-mobile-open { max-height: 400px; }
@@ -1217,11 +1260,30 @@ button::-moz-focus-inner, a::-moz-focus-inner, [role="button"]::-moz-focus-inner
 
 /* ---------- about ---------- */
 .about {
+  /*
   background: linear-gradient(180deg, rgba(11,9,8,0.97) 0%, rgba(26,18,14,0.93) 50%, rgba(11,9,8,0.98) 100%),
               url('https://charcoalbkk.com/wp-content/uploads/2023/09/DSCF2084-1-scaled.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  */
+  background: #ffffff;
+  color: #000000;
+}
+.about .section-title,
+.about .body-text,
+.about .about-intro-text,
+.about .stat-label,
+.about .about-info-block p {
+  color: #000000;
+}
+.about .eyebrow,
+.about .stat-num,
+.about .accent,
+.about .about-info-divider,
+.about .about-info-block h3 {
+  color: #271a6b;
+  font-weight: 700;
 }
 .about-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 8vw; align-items: center; }
 .about-image .scorch-frame { aspect-ratio: 4/5; }
