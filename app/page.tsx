@@ -275,7 +275,7 @@ function Nav() {
             ))}
             <a
               className="btn-ember btn-sm"
-              href="https://book.bistrochat.com/charcoal-sri-lanka"
+              href="https://charcoal-tandoor-fire-grill.happychimps.com/reservation?branch=199&menu=book_a_table&sub_menu=book_a_table"
               target="_blank"
               rel="noreferrer"
             >
@@ -372,7 +372,7 @@ function Hero() {
             Reserve a Table
           </a>
           <a className="btn-ghost" href="tel:+94777600611">
-            <Phone size={16} /> +94 777 600 611
+            
           </a>
         </div>
       </div>
